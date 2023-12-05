@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JetClientState">
+    <option name="draftsState">
+      <draftsState>
+        <option name="requests">
+          <list>
+            <requestState>
+              <option name="body">
+                <bodyState>
+                  <option name="raw" value="{&#10;&quot;name&quot;: &quot;ahmed 3&quot;,&#10; &quot;email&quot;: &quot;ahmed10@gmail.com&quot;,&#10;  &quot;password&quot;: &quot;ahmed12&quot;,&#10;  &quot;age&quot;: 30&#10;}" />
+                  <option name="type" value="JSON" />
+                </bodyState>
+              </option>
+              <option name="headers">
+                <list>
+                  <headerState>
+                    <option name="key" value="Content-Type" />
+                    <option name="value" value="application/json" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Authorization" />
+                    <option name="value" value="1" />
+                  </headerState>
+                </list>
+              </option>
+              <option name="id" value="37dd57ea-9a64-4921-9c98-0df0ebf21371" />
+              <option name="method" value="POST" />
+              <option name="name" value="register user" />
+              <option name="url" value="http://127.0.0.1:3000/api/v1/auth/login" />
+            </requestState>
+            <requestState>
+              <option name="body">
+                <bodyState>
+                  <option name="raw" value="{&#10;&quot;name&quot;: &quot;ahmed 3&quot;,&#10; &quot;email&quot;: &quot;ahmed10@gmail.com&quot;,&#10;  &quot;password&quot;: &quot;ahmed1&quot;,&#10;  &quot;age&quot;: 30&#10;}" />
+                  <option name="type" value="JSON" />
+                </bodyState>
+              </option>
+              <option name="headers">
+                <list>
+                  <headerState>
+                    <option name="key" value="Content-Type" />
+                    <option name="value" value="application/json" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Authorization" />
+                    <option name="value" value="1" />
+                  </headerState>
+                </list>
+              </option>
+              <option name="id" value="e97c4b3f-399b-455c-ab59-e87dddcce469" />
+              <option name="method" value="POST" />
+              <option name="name" value="login" />
+              <option name="url" value="http://127.0.0.1:3000/api/v1/auth/registration" />
+            </requestState>
+          </list>
+        </option>
+      </draftsState>
+    </option>
+    <option name="id" value="892d87d9-f532-4b22-8fbc-7eeeaa9d9d57" />
+  </component>
+</project>
