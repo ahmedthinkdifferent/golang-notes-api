@@ -4,13 +4,14 @@ import (
 	"fmt"
 	"github.com/joho/godotenv"
 	"log"
-	"noteapp/core/util"
+	"strconv"
 )
 
 var AppEnvironment *AppEnv
 
 type App struct {
-	Port int `json:"port"`
+	Port     int    `json:"port"`
+	JwtToken string `json:"jwt_token"`
 }
 
 type AppEnv struct {
@@ -20,8 +21,13 @@ type AppEnv struct {
 func LoadEnv() {
 	data, err := godotenv.Read()
 	if err != nil {
-		log.Fatal("Error loading .env file")
+		log.Fatalf("Error loading .env file %v", err)
 	}
-	AppEnvironment = &AppEnv{App: App{Port: util.ToInt(data["PORT"])}}
+	AppEnvironment = &AppEnv{App: App{Port: ToInt(data["PORT"]), JwtToken: data["JWT_TOKEN"]}}
 	fmt.Println("env loaded successfully")
+}
+
+func ToInt(data string) int {
+	val, _ := strconv.Atoi(data)
+	return val
 }

@@ -16,6 +16,7 @@ type User struct {
 	UpdatedAt time.Time      `json:"updated_at" gorm:"column:updated_at"`
 	DeletedAt gorm.DeletedAt `json:"deleted_at"`
 	Notes     []Note
+	JwtToken  string `json:"jwt_token" gorm:"-"`
 }
 
 func (u *User) BeforeCreate(tx *gorm.DB) (err error) {

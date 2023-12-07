@@ -44,5 +44,8 @@ func LoginUser(dto LoginDto, repository *UserRepository) (*model.User, *http.App
 	if !samePassword {
 		return nil, &http.AppError{StatusCode: 400, Error: "Password is incorrect"}
 	}
+	user.JwtToken = util.GenerateJwtToken(map[string]any{
+		"user_id": user.Id,
+	})
 	return user, nil
 }

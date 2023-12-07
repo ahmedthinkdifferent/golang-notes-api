@@ -51,7 +51,31 @@
               <option name="id" value="e97c4b3f-399b-455c-ab59-e87dddcce469" />
               <option name="method" value="POST" />
               <option name="name" value="login" />
-              <option name="url" value="http://127.0.0.1:3000/api/v1/auth/registration" />
+              <option name="url" value="http://127.0.0.1:3000/api/v1/auth/login" />
+            </requestState>
+            <requestState>
+              <option name="body">
+                <bodyState>
+                  <option name="raw" value="{&#10;&quot;name&quot;: &quot;ahmed 3&quot;,&#10; &quot;email&quot;: &quot;ahmed10@gmail.com&quot;,&#10;  &quot;password&quot;: &quot;ahmed1&quot;,&#10;  &quot;age&quot;: 30&#10;}" />
+                  <option name="type" value="JSON" />
+                </bodyState>
+              </option>
+              <option name="headers">
+                <list>
+                  <headerState>
+                    <option name="key" value="Content-Type" />
+                    <option name="value" value="application/json" />
+                  </headerState>
+                  <headerState>
+                    <option name="key" value="Authorization" />
+                    <option name="value" value="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDE5MTM2NzcsInVzZXJfaWQiOjh9.52cwDkDhdMpEm2q_fta79ztJ7yoY4tHbRW7oOs1ApXE" />
+                  </headerState>
+                </list>
+              </option>
+              <option name="id" value="27ac2d45-5f6c-4a04-83ca-fe313dda42b9" />
+              <option name="method" value="GET" />
+              <option name="name" value="user notes" />
+              <option name="url" value="http://127.0.0.1:3000/api/v1/notes" />
             </requestState>
           </list>
         </option>
