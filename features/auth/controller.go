@@ -18,7 +18,7 @@ func Register(ctx *fiber.Ctx) error {
 
 func GetUserWithNotes(ctx *fiber.Ctx) error {
 	userId, _ := strconv.Atoi(ctx.Params("userId"))
-	user := (&note.NoteRepo{}).UserWithNotes(userId)
+	user := (&note.Repo{}).UserWithNotes(userId)
 	return res.Success(ctx, user)
 }
 

@@ -14,6 +14,7 @@ func main() {
 	db.Connect()
 	app := fiber.New()
 	routes.RegisterAppRoutes(app)
+
 	err := app.Listen(util.FormatStr(":%d", env.AppEnvironment.App.Port))
 	if err != nil {
 		log.Fatal("failed to start app")

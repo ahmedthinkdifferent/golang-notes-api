@@ -8,18 +8,19 @@ import (
 )
 
 type CreateUserNoteDto struct {
-	Title   string `json:"title" validate:"required,min=2"`
-	Content string `json:"content" validate:"required,min=2"`
+	Title   string   `json:"title" validate:"required,min=2"`
+	Content string   `json:"content" validate:"required,min=2"`
+	Files   []string `json:"files"`
 }
 
 func GetUserNotes(ctx *fiber.Ctx) error {
 	userId, _ := strconv.Atoi(ctx.Get("userId"))
-	notes := UserNotes(userId, &NoteRepo{})
+	notes := UserNotes(userId, &Repo{})
 	return res.Success(ctx, notes)
 }
 
 func CreateUserNote(ctx *fiber.Ctx) error {
-	userId, _ := strconv.Atoi(ctx.Locals("userId").(string))
+	userId, _ := ctx.Locals("userId").(int)
 	var dto = new(CreateUserNoteDto)
 	err := ctx.BodyParser(&dto)
 	if err != nil {
@@ -28,6 +29,6 @@ func CreateUserNote(ctx *fiber.Ctx) error {
 	if validationError := util.Validate(dto); validationError.HasErrors() {
 		return res.ValidationError(ctx, validationError.Errors)
 	}
-	userNote := SaveUserNote(userId, dto.Title, dto.Content, &NoteRepo{})
+	userNote := SaveUserNote(userId, dto.Title, dto.Content, dto.Files, &Repo{})
 	return res.Success(ctx, userNote)
 }

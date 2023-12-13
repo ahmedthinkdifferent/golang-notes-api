@@ -17,5 +17,8 @@ func Connect() {
 	}
 	Database = db
 	// Migrate the schema
-	Database.AutoMigrate(&model.User{}, &model.Note{})
+	err = Database.AutoMigrate(&model.User{}, &model.Note{}, &model.NoteFile{})
+	if err != nil {
+		panic(err)
+	}
 }

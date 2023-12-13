@@ -13,4 +13,11 @@ type Note struct {
 	CreatedAt time.Time      `json:"created_at" gorm:"column:created_at"`
 	UpdatedAt time.Time      `json:"updated_at" gorm:"column:updated_at"`
 	DeletedAt gorm.DeletedAt `json:"deleted_at"`
+	Files     []NoteFile     `json:"files" gorm:"foreignKey:NoteId"`
+}
+
+type NoteFile struct {
+	Id     int    `json:"id" gorm:"primaryKey,column:id"`
+	NoteId int    `json:"note_id" gorm:"column:note_id;foreignKey:NoteId"`
+	File   string `json:"file" gorm:"column:file"`
 }
